@@ -1,0 +1,3 @@
+﻿Her bir teknploji icin bir klasör acilir.
+InMemory, db ile calismaya baslamadan önce pratik yapmak icin. Sanki bellekte bir db varmis gibi.
+EntityFramework veya diger teknolojiler de kullanilabilir ayni sekilde.
