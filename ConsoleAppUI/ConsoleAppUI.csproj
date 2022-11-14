@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessClassLib\ClassLibBusiness.csproj" />
+    <ProjectReference Include="..\ClassLibEntities\ClassLibEntities.csproj" />
+    <ProjectReference Include="..\DataAccessClassLib\ClassLibDataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
