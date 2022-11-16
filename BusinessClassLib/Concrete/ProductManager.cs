@@ -18,7 +18,7 @@ namespace ClassLibBusiness.Concrete
         }
         public List<Product> GetAll()
         {
-            //Here comes Business code, and then codes blow
+            //Here comes Business code, and then codes blow (not as DAL, DAL does only data access. Business uses DAL.)
             return _productDal.GetAll();
         }
     }
