@@ -1,3 +1,27 @@
 ﻿Her bir teknploji icin bir klasör acilir.
 InMemory, db ile calismaya baslamadan önce pratik yapmak icin. Sanki bellekte bir db varmis gibi.
 EntityFramework veya diger teknolojiler de kullanilabilir ayni sekilde.
+
+
+----
+
+
+Entity Framework:
+
+ORM: Veri tabani ile kodumuz arasinda köprü kuruyor.
+
+Uygulanmasi:
+Entity Framework sisteme dahil edilmeli. Yani NuGet  paketleri indirilmeli.
+
+Entity Framework kodu dataaccess'de kullanilacak dolaysisi ile bu paketler burada yüklenecek.
+
+Context ekle: Veri tabani ile kendi class lari iliskilendirdigimiz class
+
+Oncelikle veri tabanimizi ekleyelim:
+SQL Server Explorer'sa localdb'de sag tiklayip bir query ac: 
+oraya nortwind'in github'indan aldigin script'leri sorgulari vs yapistir.
+Ve Execute et (sol iustteki, run etme dugmesi degil)
+
+Sonra databaseler'e sag tiklayip refresh yaparsan nortwind'in geldigini görürsun.
+
+8.gün 1:30

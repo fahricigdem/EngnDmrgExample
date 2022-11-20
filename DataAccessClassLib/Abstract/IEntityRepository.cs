@@ -1,4 +1,5 @@
-﻿using ClassLibEntities.Concrete;
+﻿using ClassLibEntities.Abstract;
+using ClassLibEntities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +7,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tip IEntitiy ya da ondan türetilmis bir class olabilir, diger tipler classlar vs olamaz
+// new'lenebilir olmalidir.
+// Sistem sadece veri tabani nesneleri ile calisan bir repository oldu.
 namespace ClassLibDataAccess.Abstract
 {
-    public interface IEntityRepository<T>
-    {
+    public interface IEntityRepository<T> where T : class,IEntity, new()
+    { 
         List<T> GetAll(Expression<Func<T, bool>> filter=null); 
         T Get(Expression<Func<T, bool>> filter); 
         void Add(T entity); 
