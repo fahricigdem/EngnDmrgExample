@@ -14,13 +14,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibDataAccess.Abstract
 {
-    public interface IProductDal
+    public interface IProductDal:IEntityRepository<Product>
     {
-        List<Product> GetAll(); // Read: Product listesi dönderen bir fonksiyon. 
-        void Add(Product product); // Create: Bir sey geri dönmez, veritabaninda degisiklik yapilir.
-        void Update(Product product); // Update
-        void Delete(Product product); // Delete
-        List<Product> GetAllByCategory(int CategoryId);
+
 
     }
 }

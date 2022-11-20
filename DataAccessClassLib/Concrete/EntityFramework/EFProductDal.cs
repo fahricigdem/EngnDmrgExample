@@ -3,6 +3,7 @@ using ClassLibEntities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,15 +21,12 @@ namespace ClassLibDataAccess.Concrete.EntityFramework
             throw new NotImplementedException();
         }
 
-        public List<Product> GetAll()
+        public Product Get(Expression<Func<Product, bool>> filter)
         {
-            return new List<Product> { 
-                new Product { ProductName = "EF item1" },
-                new Product { ProductName = "EF item2" } 
-            };
+            throw new NotImplementedException();
         }
 
-        public List<Product> GetAllByCategory(int CategoryId)
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
