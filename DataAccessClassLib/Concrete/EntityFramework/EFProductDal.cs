@@ -1,5 +1,6 @@
 ﻿using ClassLibDataAccess.Abstract;
 using ClassLibEntities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,18 @@ namespace ClassLibDataAccess.Concrete.EntityFramework
 {
     public class EFProductDal : IProductDal
     {
-        public void Add(Product product)
+        public void Add(Product entity)
         {
-            throw new NotImplementedException();
+            //IDisposable pattern implementation of C# (using icindekiler islem bittikten sonmra temizlenir)
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                var addedEntity = context.Entry(entity);
+                addedEntity.State = EntityState.Added;
+                context.SaveChanges();
+            }
         }
 
-        public void Delete(Product product)
+        public void Delete(Product entity)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +38,7 @@ namespace ClassLibDataAccess.Concrete.EntityFramework
             throw new NotImplementedException();
         }
 
-        public void Update(Product product)
+        public void Update(Product entity)
         {
             throw new NotImplementedException();
         }

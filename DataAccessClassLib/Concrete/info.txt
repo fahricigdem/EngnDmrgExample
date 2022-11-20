@@ -9,6 +9,7 @@ EntityFramework veya diger teknolojiler de kullanilabilir ayni sekilde.
 Entity Framework:
 
 ORM: Veri tabani ile kodumuz arasinda köprü kuruyor.
+Yani Customer tablosu ile Customer class'i iliskilendirilmeli.
 
 Uygulanmasi:
 Entity Framework sisteme dahil edilmeli. Yani NuGet  paketleri indirilmeli.
@@ -18,10 +19,15 @@ Entity Framework kodu dataaccess'de kullanilacak dolaysisi ile bu paketler burad
 Context ekle: Veri tabani ile kendi class lari iliskilendirdigimiz class
 
 Oncelikle veri tabanimizi ekleyelim:
-SQL Server Explorer'sa localdb'de sag tiklayip bir query ac: 
+SQL Server Explorer'da localdb'de sag tiklayip bir query ac: 
 oraya nortwind'in github'indan aldigin script'leri sorgulari vs yapistir.
 Ve Execute et (sol iustteki, run etme dugmesi degil)
-
 Sonra databaseler'e sag tiklayip refresh yaparsan nortwind'in geldigini görürsun.
+
+Simdi Context'i kuralim:
+NorthwindContext Class'ini olustur.
+DbContext -> inherit as base class
+
+
 
 8.gün 1:30
