@@ -1,0 +1,3 @@
+﻿-Burada birden cok projede kullanilabilecek abstact class'lar bulunacaktir.
+
+-Tüm layer'lar Core Layer'ina baglidir, Core hicbirine bagli degildir, referans olarak.

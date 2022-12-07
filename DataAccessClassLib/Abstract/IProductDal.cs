@@ -6,6 +6,7 @@
 // diger class'lardan ulasilabilmesi icin public olmalidir.
 // interface'in operasyonlari public'tir, ayriyeten public demeye gerek yok.
 using ClassLibEntities.Concrete;
+using Core.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;

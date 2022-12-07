@@ -1,5 +1,4 @@
-﻿using ClassLibEntities.Abstract;
-using ClassLibEntities.Concrete;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 // Tip IEntitiy ya da ondan türetilmis bir class olabilir, diger tipler classlar vs olamaz
 // new'lenebilir olmalidir.
 // Sistem sadece veri tabani nesneleri ile calisan bir repository oldu.
-namespace ClassLibDataAccess.Abstract
+namespace Core.DataAccess
 {
     public interface IEntityRepository<T> where T : class,IEntity, new()
     { 
@@ -21,3 +20,4 @@ namespace ClassLibDataAccess.Abstract
         void Delete(T entity);
     }
 }
+ 

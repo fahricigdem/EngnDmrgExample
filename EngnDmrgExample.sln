@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibDataAccess", "DataAccessClassLib\ClassLibDataAccess.csproj", "{25368B9B-E3B8-4779-86BA-898011E83F95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibDataAccess", "DataAccessClassLib\ClassLibDataAccess.csproj", "{25368B9B-E3B8-4779-86BA-898011E83F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibBusiness", "BusinessClassLib\ClassLibBusiness.csproj", "{5F7456AC-F1C9-481D-9A6A-FC367807DF35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibBusiness", "BusinessClassLib\ClassLibBusiness.csproj", "{5F7456AC-F1C9-481D-9A6A-FC367807DF35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibEntities", "ClassLibEntities\ClassLibEntities.csproj", "{6D2E6949-9FAC-4D45-8B32-87ECFB650AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibEntities", "ClassLibEntities\ClassLibEntities.csproj", "{6D2E6949-9FAC-4D45-8B32-87ECFB650AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppUI", "ConsoleAppUI\ConsoleAppUI.csproj", "{C6E6EBB2-8BF2-459C-BFF8-8C2F44109B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppUI", "ConsoleAppUI\ConsoleAppUI.csproj", "{C6E6EBB2-8BF2-459C-BFF8-8C2F44109B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{6E00481F-D941-4DB3-BEAD-DDA4C399AD71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C6E6EBB2-8BF2-459C-BFF8-8C2F44109B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E6EBB2-8BF2-459C-BFF8-8C2F44109B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E6EBB2-8BF2-459C-BFF8-8C2F44109B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E00481F-D941-4DB3-BEAD-DDA4C399AD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E00481F-D941-4DB3-BEAD-DDA4C399AD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E00481F-D941-4DB3-BEAD-DDA4C399AD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E00481F-D941-4DB3-BEAD-DDA4C399AD71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

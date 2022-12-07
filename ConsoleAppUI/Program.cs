@@ -32,7 +32,6 @@ ProductManager productManager1 = new ProductManager(new EFProductDal());
 //foreach (var item in productManager1.GetAll()) Console.WriteLine(item.ProductName);
 //foreach (var item in productManager1.GetAllByCategoryId(1)) Console.WriteLine(item.ProductName);
 //foreach (var item in productManager1.GetAllByUnitPrice(15, 25)) Console.WriteLine(item.ProductName + " - " +item.UnitPrice);
-
 Console.WriteLine("Id: 2 ->" + productManager1.GetById(2).ProductName);
 #endregion
 
@@ -49,6 +48,6 @@ NorthwindContext context = new();
 //        product => Console.WriteLine(product.ProductName)
 //    );
 
-var xx= (new NorthwindContext()).Set<Product>().ToList()
+var xx = (new NorthwindContext()).Set<Product>().ToList();
 
 #endregion
