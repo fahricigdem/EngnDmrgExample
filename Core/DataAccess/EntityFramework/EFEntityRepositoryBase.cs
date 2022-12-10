@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace Core.DataAccess.EntityFramework
 {
-    internal class EFEntityRepositoryBase
+    public class EFEntityRepositoryBase<TEntity, TContext>
+        where TEntity: class, IEntity, new()
+        where TContext: DbContext, new()
     {
     }
 }
