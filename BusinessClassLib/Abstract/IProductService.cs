@@ -11,12 +11,11 @@ namespace ClassLibBusiness.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAll();
-        List<Product> GetAllByCategoryId(int id);
-        List<Product> GetAllByUnitPrice(decimal min, decimal max);
-        Product GetById(int id);
-        List<ProductDetailDto> GetProductDetails();
-
+        IDataResult<List<Product>> GetAll();
+        IDataResult<List<Product>> GetAllByCategoryId(int id);
+        IDataResult<List<Product>> GetAllByUnitPrice(decimal min, decimal max);
+        IDataResult<Product> GetById(int id);
+        IDataResult<List<ProductDetailDto>>  GetProductDetails();
         IResult Add(Product product);
     }
 }
