@@ -1,4 +1,5 @@
 ﻿using ClassLibBusiness.Abstract;
+using ClassLibBusiness.Constants;
 using ClassLibDataAccess.Abstract;
 using ClassLibEntities.Concrete;
 using ClassLibEntities.DTOs;
@@ -24,11 +25,12 @@ namespace ClassLibBusiness.Concrete
             //business code
             if (product?.ProductName?.Length<2)
             {
-                return new ErrorResult("Ürün ismi en az 2 karakter olmalidir");
+                //magic strings
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
             _productDal.Add(product);
 
-            return new SuccessResult();
+            return new SuccessResult(Messages.ProductAdded);
         }
 
         public List<Product> GetAll()
