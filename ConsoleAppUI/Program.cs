@@ -37,8 +37,16 @@ ProductManager productManager1 = new ProductManager(new EFProductDal());
 
 CategoryManager categoryManager = new CategoryManager(new EFCategoryDal());
 //foreach (var item in categoryManager.GetAll()) Console.WriteLine(item.CategoryId + " " + item.CategoryName);
+var result = productManager1.GetProductDetails();
+if (result.Success) 
+{
+    foreach (var item in productManager1.GetProductDetails().Data) Console.WriteLine(item.ProductName + " " + item.CategoryName);
+}
+else
+{
+    Console.WriteLine(result.Message);
+}
 
-foreach (var item in productManager1.GetProductDetails()) Console.WriteLine(item.ProductName + " " + item.CategoryName);
 
 #endregion
 

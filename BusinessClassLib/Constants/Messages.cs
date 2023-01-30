@@ -10,5 +10,8 @@ namespace ClassLibBusiness.Constants
     {
         public static string ProductAdded = "Ürün eklendi";
         public static string ProductNameInvalid = "Ürün ismi gecersiz";
+        public static string MaintenanceTime = "Bakim Zamani";
+        public static string ProductsListed = "Ürünler listelendi";
+        
     }
 }
