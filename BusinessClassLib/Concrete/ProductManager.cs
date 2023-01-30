@@ -2,6 +2,7 @@
 using ClassLibDataAccess.Abstract;
 using ClassLibEntities.Concrete;
 using ClassLibEntities.DTOs;
+using Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,19 @@ namespace ClassLibBusiness.Concrete
         {
             _productDal = productDal; 
         }
+
+        public IResult Add(Product product)
+        {
+            //business code
+            if (product?.ProductName?.Length<2)
+            {
+                return new ErrorResult("Ürün ismi en az 2 karakter olmalidir");
+            }
+            _productDal.Add(product);
+
+            return new SuccessResult();
+        }
+
         public List<Product> GetAll()
         {
             //Here comes Business code, and then codes blow (not as DAL, DAL does only data access. Business uses DAL.)

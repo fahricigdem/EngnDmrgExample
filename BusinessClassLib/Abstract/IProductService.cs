@@ -1,5 +1,6 @@
 ﻿using ClassLibEntities.Concrete;
 using ClassLibEntities.DTOs;
+using Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace ClassLibBusiness.Abstract
         Product GetById(int id);
         List<ProductDetailDto> GetProductDetails();
 
+        IResult Add(Product product);
     }
 }
