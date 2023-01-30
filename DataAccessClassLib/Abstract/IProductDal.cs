@@ -6,6 +6,7 @@
 // diger class'lardan ulasilabilmesi icin public olmalidir.
 // interface'in operasyonlari public'tir, ayriyeten public demeye gerek yok.
 using ClassLibEntities.Concrete;
+using ClassLibEntities.DTOs;
 using Core.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ClassLibDataAccess.Abstract
 {
     public interface IProductDal:IEntityRepository<Product>
     {
-
+        List<ProductDetailDto> GetProductDetails();
 
     }
 }

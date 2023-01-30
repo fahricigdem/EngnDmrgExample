@@ -1,4 +1,5 @@
 ﻿using ClassLibEntities.Concrete;
+using ClassLibEntities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ClassLibBusiness.Abstract
         List<Product> GetAllByCategoryId(int id);
         List<Product> GetAllByUnitPrice(decimal min, decimal max);
         Product GetById(int id);
+        List<ProductDetailDto> GetProductDetails();
 
     }
 }
