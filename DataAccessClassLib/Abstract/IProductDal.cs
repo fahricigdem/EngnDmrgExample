@@ -1,6 +1,6 @@
 ﻿// Data Acccess Layer
 // Veri tabaninda Product ile ilgili yapilacak islemler, CRUD operasyonlari.
-// Product class'ini burada kull icin bu class'i barindiran proje bu projeye eklenir, referans olarak. Dependency olarak.
+// Product class'ini burada kull icin bu class'i barindiran proje bu projeye eklenir, referans olarak. Dependency olarak. Burada Product class.
 // Ayni projedeki diger bir class icin using yeterlidir.
 // Her is yapan class bir interface'e sahip olmalidir.
 // diger class'lardan ulasilabilmesi icin public olmalidir.

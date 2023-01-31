@@ -27,6 +27,9 @@ EFProductDal eFProductDal = new();
 
 //foreach (Product product in products) Console.WriteLine(product.ProductName);
 
+//ProductManager productManager2 = new ProductManager(new InMemoryProductDal());
+//Console.WriteLine(productManager2.GetById(2).Data.ProductName);
+
 ProductManager productManager1 = new ProductManager(new EFProductDal());
 
 //foreach (var item in productManager1.GetAll()) Console.WriteLine(item.ProductName);
@@ -46,6 +49,7 @@ else
 {
     Console.WriteLine(result.Message);
 }
+
 
 
 #endregion

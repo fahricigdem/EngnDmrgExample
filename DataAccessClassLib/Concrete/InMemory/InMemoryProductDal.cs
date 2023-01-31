@@ -38,7 +38,8 @@ namespace ClassLibDataAccess.Concrete.InMemory
 
         public Product Get(Expression<Func<Product, bool>> filter)
         {
-            throw new NotImplementedException();
+            Product productToGet = _products.AsQueryable().SingleOrDefault(filter);
+            return productToGet;
         }
 
          public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
