@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Autofac, Ninject, CastleWindsor, StructoreMap, LightInject, DryInject --> IoC Container gibi islem yapan eski sistemler
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IProductService, ProductManager>();
 builder.Services.AddSingleton<IProductDal, EFProductDal>(); // ProductManager de IProductDal'a bagimlidir, constructor'inda, dolayisiyla o noktada ihtiyac duyuldugundan collection'a IProductDal icin EFProductDal verilir. Eger InMemoryProductDal kullanilmasi gerekirse ne olacak ???
