@@ -30,7 +30,7 @@ EFProductDal eFProductDal = new();
 //ProductManager productManager2 = new ProductManager(new InMemoryProductDal());
 //Console.WriteLine(productManager2.GetById(2).Data.ProductName);
 
-ProductManager productManager1 = new ProductManager(new EFProductDal());
+ProductManager productManager1 = new ProductManager(new EFProductDal(), new CategoryManager(new EFCategoryDal()));
 
 //foreach (var item in productManager1.GetAll()) Console.WriteLine(item.ProductName);
 //foreach (var item in productManager1.GetAllByCategoryId(1)) Console.WriteLine(item.ProductName);

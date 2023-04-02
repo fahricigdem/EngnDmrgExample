@@ -12,6 +12,8 @@ namespace ClassLibBusiness.Constants
         public static string ProductNameInvalid = "Ürün ismi gecersiz";
         public static string MaintenanceTime = "Bakim Zamani";
         public static string ProductsListed = "Ürünler listelendi";
-        
+        public static string ProductCountOfCategoryError = "Kategorideki product sayisi hatali";
+        public static string ProductNameAlreadyExists = "Bu isimde zaten baska bir ürün var";
+        public static string CategoryLimitExceeded = "Kategori limiti asildi";
     }
 }

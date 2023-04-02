@@ -2,10 +2,12 @@
 using ClassLibBusiness.Constants;
 using ClassLibBusiness.ValidationRules.FluentValidation;
 using ClassLibDataAccess.Abstract;
+using ClassLibDataAccess.Concrete.EntityFramework;
 using ClassLibEntities.Concrete;
 using ClassLibEntities.DTOs;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using FluentValidation;
 using System;
@@ -20,25 +22,24 @@ namespace ClassLibBusiness.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        public ProductManager(IProductDal productDal)
+        ICategoryService _categoryService;
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)  
         {
-            _productDal = productDal; 
+            _productDal = productDal;
+            _categoryService = categoryService;
         }
 
-        [ValidationAspect(typeof(ProductValidator))]
+        [ValidationAspect(typeof(ProductValidator))]  // Cross Cutting Concerns - layer'lari dikey keserler 
         public IResult Add(Product product)
         {
-            //validation codes (burada yapisal olarak bakilir)
-
-            //if (product?.ProductName?.Length<2)
-            //{
-            //    //magic strings
-            //    return new ErrorResult(Messages.ProductNameInvalid);
-            //}//FluentValidation kapsaminda yapildi.
-
-            //ValidationTool.Validate(new ProductValidator(), product);
-
             //business codes 
+            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
+                CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceed());
+
+            if (result != null)
+            {
+                return result;
+            } 
 
             _productDal.Add(product);
 
@@ -77,5 +78,50 @@ namespace ClassLibBusiness.Concrete
             }
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
+
+        [ValidationAspect(typeof(ProductValidator))]  // Cross Cutting Concerns - layer'lari dikey keserler 
+        public IResult Update(Product product)
+        {
+            //business codes 
+            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
+                CheckIfProductCountOfCategoryCorrect(product.CategoryId));
+
+            if (result != null)
+            {
+                return result;
+            }
+
+            _productDal.Update(product);
+
+            return new SuccessResult(Messages.ProductAdded);
+        }
+
+        private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
+        {
+            var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
+            if (result >= 15) 
+            {
+                return new ErrorResult(Messages.ProductCountOfCategoryError);
+            }
+            return new SuccessResult();
+        }
+        private IResult CheckIfProductNameExists(string productName)
+        {
+            var result = _productDal.GetAll(p => p.ProductName == productName).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.ProductNameAlreadyExists);
+            }
+            return new SuccessResult();
+        }
+        private IResult CheckIfCategoryLimitExceed()
+        {
+            var result = _categoryService.GetAll();
+            if (result.Data.Count>15)
+            {
+                return new ErrorResult(Messages.CategoryLimitExceeded);
+            }
+            return new SuccessResult(); 
+        } 
     }
 }
