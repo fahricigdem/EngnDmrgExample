@@ -81,7 +81,7 @@ namespace ClassLibBusiness.Concrete
 
         [ValidationAspect(typeof(ProductValidator))]  // Cross Cutting Concerns - layer'lari dikey keserler 
         public IResult Update(Product product)
-        {
+        {  
             //business codes 
             IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
                 CheckIfProductCountOfCategoryCorrect(product.CategoryId));
