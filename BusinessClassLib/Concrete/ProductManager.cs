@@ -29,6 +29,7 @@ namespace ClassLibBusiness.Concrete
             _categoryService = categoryService;
         }
 
+        //[SecuredOperation("admin,product.add")]
         [ValidationAspect(typeof(ProductValidator))]  // Cross Cutting Concerns - layer'lari dikey keserler 
         public IResult Add(Product product)
         {
