@@ -1,4 +1,5 @@
-﻿using ClassLibBusiness.Abstract;
+﻿using Business.BusinessAspects.Autofac;
+using ClassLibBusiness.Abstract;
 using ClassLibBusiness.Constants;
 using ClassLibBusiness.ValidationRules.FluentValidation;
 using ClassLibDataAccess.Abstract;
@@ -29,7 +30,7 @@ namespace ClassLibBusiness.Concrete
             _categoryService = categoryService;
         }
 
-        //[SecuredOperation("admin,product.add")]
+        //[SecuredOperation("product.add, admin")]
         [ValidationAspect(typeof(ProductValidator))]  // Cross Cutting Concerns - layer'lari dikey keserler 
         public IResult Add(Product product)
         {
@@ -49,8 +50,9 @@ namespace ClassLibBusiness.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
+            Thread.Sleep(200);
             //Here comes Business code, and then codes blow (not as DAL, DAL does only data access. Business uses DAL.)
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 1)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -73,7 +75,7 @@ namespace ClassLibBusiness.Concrete
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 1)
             {
                 return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
             }
